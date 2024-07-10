@@ -13,9 +13,6 @@ const tempID = 'template_ac9j3ac'
 const publickey = 'LVYeAFqxLSjgZ0D33'
 
 
-
-
-
 const FormComponent = () => {
   const [formData, setFormData] = useState({
     fullName: '',
@@ -298,7 +295,15 @@ const FormComponent = () => {
                   </div>
                 </div>
               )}
-              <button type="submit" className="btn btn-primary" onClick={handleSignIn}>Sign In</button>
+              <button type="submit" className="btn btn-success" disabled={!isVerified} onClick={handleSignIn}>
+                Sign In
+              </button>
+
+              <div className="mt-3">
+                <p>
+                  Already have an account? <Link to="/login">Login here</Link>
+                </p>
+              </div>
             </form>
           </div>
         </div>
@@ -308,3 +313,4 @@ const FormComponent = () => {
 };
 
 export default FormComponent;
+
